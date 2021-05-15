@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code QUIZ Page</title>
+    <!-- css include -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- <a id="scoreslink" href="#">Top scores</a> -->
+    <button id="scoreslink">Top scores</button>
+    <b id="timer">timer</b>
+
+    <div id="questionArea">
+
+        <div id="intro">
+            <h1>Coding QUIZ Challenge</h1>
+            <h2><strong>Try to answer the following code-related questions within the time limit.
+                    Keep in mind that incorrect answers wil penalize your score/time by ten seconds</strong></h2>
+
+            <button id="startBtn">Start Quiz</button>
+        </div>
+
+        <div id="testArea">
+            <!-- this div is where the questions are embedded into-->
+            <h1 id="testquestion">Question goes here and it is _____ long sometime so we need to figute out ho w to
+                _____. Test of css and javascript</h1>
+            <ul id="ansList">
+                <li class="answer" id="Ans1">aahs sh asashahs ash aasha ssha ashasha shasahs ash ash ash as1</li>
+                <li class="answer" id="Ans2">2</li>
+                <li class="answer" id="Ans3">3</li>
+                <li class="answer" id="Ans4">4</li>
+            </ul>
+            <div > 
+                <b id="answerScore"></b>
+            </div>
+           
+        </div>
+
+        <div id="end">
+            <h1 id="student">student name here</h1>
+            <h3 id="finalScore"> final score here </h3>
+            <div id="initialsReport">
+                <label id="initialsLabel">Enter initials:</label>
+            <input type="text" id="nameInput">
+            <button class="btn" id="reportScore">submit</button>
+            </div>
+            
+        </div>
+
+        <div id="topScoreArea">
+            <h1>Highscores</h1>
+            <ul id="topScoreList">
+              <!--  <li>here</li>
+                <li>here</li>
+              -->
+            </ul>
+            <div id="scoreButtons">
+               <div> <button class="btn" id="backBtn">Go Back</button></div>
+               <div><button class="btn" id="clearScoreBtn">Clear Highscores</button></div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- javascript include -->
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+
+</html>

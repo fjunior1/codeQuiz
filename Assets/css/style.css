@@ -1,0 +1,147 @@
+/*
+. class
+# id
+*/
+* {
+    background-color:ghostwhite;
+}
+
+#intro {
+   width: 60%;
+   align-items: center;
+   /*justify-content: center;*/
+}
+
+#intro h1 h2 {
+   margin: 0px;
+}
+
+#startBtn{
+    color: white;
+    background-color: mediumorchid;
+    border:none;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+#scoretest {
+    color:blue;
+}
+
+#scoreslink {
+    float:left;
+    /* top score is floating left, found the hard way that float elements cannot use margin/padding left/right,
+    have space out of the left/right edge is to position relative.*/
+    position: relative;
+    left: 15px;
+    background-color: none;
+    border:none;
+    color:blue;
+    text-decoration: underline;
+}
+
+#timer {
+ float:right;
+ /* timer is floating right, found the hard way that float elements cannot use margin/padding left/right,
+ have space out of the left/right edge is to position relative.*/
+  position: relative;
+  right: 40px;
+}
+
+#questionArea {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  justify-content: center;
+}
+
+#questionArea div {
+  display:flex;
+  flex-direction: column;
+}
+
+#testArea{
+   width: 60%;
+}
+
+#testquestion {
+  margin-bottom: 0px;
+  width: auto;
+}
+
+#testArea ul{
+  margin-left:0px;
+  padding-left: 0px;
+  display:flex;
+  flex-direction: column;
+  
+}
+
+#testArea li {
+  list-style-type:none;
+  margin-left:0px;
+  padding:2px;
+  margin-bottom: 20px;;
+  font-size: larger;
+  color:white;
+  background-color: mediumorchid;
+  border-radius: 5px;
+  flex-direction: row;
+  align-self: flex-start;
+}
+
+#answerScore{
+    color: blue;
+}
+
+/* final score repot area*/
+#end {
+   display: flex;
+   flex-direction:row;
+   width:60%;
+}
+
+#initialsLabel, #nameInput, #reportScore{
+  flex-wrap: nowrap;
+  flex:1;
+}
+
+#topScoreArea {
+  display:flex;
+  flex-direction: column;
+}
+
+#topScoreArea ul {
+  margin:0px;
+  padding:0px;
+}
+
+#topScoreArea li {
+  list-style-type:none;
+  margin:0px;
+  padding:2px;
+  width:100%;
+  margin-bottom: 5px;
+  background-color: rgb(248, 244, 193);
+  border-radius: 5px;
+}
+
+#scoreButtons {
+  display:flex;
+  flex-direction: row;
+  height:100%;
+}
+
+#scoreButtons div {
+  width: 40%;
+}
+
+.btn {
+    border: none;
+   color:white;
+   background-color: mediumorchid;
+   border-radius: 5px;
+}
+
