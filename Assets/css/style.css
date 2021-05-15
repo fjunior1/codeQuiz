@@ -9,7 +9,6 @@
 #intro {
    width: 60%;
    align-items: center;
-   /*justify-content: center;*/
 }
 
 #intro h1 h2 {
@@ -18,7 +17,7 @@
 
 #startBtn{
     color: white;
-    background-color: mediumorchid;
+    background-color: darkmagenta;
     border:none;
     font-size: larger;
     border-radius: 5px;
@@ -33,7 +32,7 @@
     /* top score is floating left, found the hard way that float elements cannot use margin/padding left/right,
     have space out of the left/right edge is to position relative.*/
     position: relative;
-    left: 15px;
+    left: 5px;
     background-color: none;
     border:none;
     color:blue;
@@ -45,7 +44,7 @@
  /* timer is floating right, found the hard way that float elements cannot use margin/padding left/right,
  have space out of the left/right edge is to position relative.*/
   position: relative;
-  right: 40px;
+  right: 5px;
 }
 
 #questionArea {
@@ -86,7 +85,7 @@
   margin-bottom: 20px;;
   font-size: larger;
   color:white;
-  background-color: mediumorchid;
+  background-color: darkmagenta;
   border-radius: 5px;
   flex-direction: row;
   align-self: flex-start;
@@ -100,17 +99,20 @@
 #end {
    display: flex;
    flex-direction:row;
-   width:60%;
 }
 
-#initialsLabel, #nameInput, #reportScore{
-  flex-wrap: nowrap;
-  flex:1;
+div#initialsReport {
+  flex-direction: row;
+}
+
+#reportScore, #nameInput {
+  margin-left:5px;
 }
 
 #topScoreArea {
   display:flex;
   flex-direction: column;
+  width:50%;
 }
 
 #topScoreArea ul {
@@ -124,24 +126,33 @@
   padding:2px;
   width:100%;
   margin-bottom: 5px;
-  background-color: rgb(248, 244, 193);
+  background-color: rgb(255, 225, 255);
   border-radius: 5px;
 }
 
-#scoreButtons {
+ /*NOTE: this is becuse there is an specificity issue with the 
+  "#question div" CSS above */
+div#scoreButtons {
   display:flex;
   flex-direction: row;
+  margin-top:10px;
   height:100%;
 }
 
 #scoreButtons div {
-  width: 40%;
+  width: 60%;
 }
 
 .btn {
     border: none;
    color:white;
-   background-color: mediumorchid;
+   background-color:darkmagenta;
    border-radius: 5px;
+}
+
+#backBtn, #clearScoreBtn {
+  margin-left:5px;
+  margin-right:5px;
+
 }
 

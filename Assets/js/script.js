@@ -1,8 +1,8 @@
-/* Presentaiton funcitonality, four stages each one in a div that is shown or hidden
-   intro: introduction to the quiz expains the rules 
-   test:  test in action, shows questions and user selects answers
+/* Presentaiton functionality, four stages each one in a DIV that is shown or hidden
+   intro:        introduction to the quiz expains the rules 
+   test:         test in action, shows questions and user selects answers
    score result: end of quiz, asks for name, then  saves name and score
-   top scores: shows high scores, clear high scores
+   top scores:   shows high scores, clear high scores
 */
 
 const timeStr = document.getElementById("timer"); 
@@ -56,11 +56,6 @@ showbyState(actState);
   and from this link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
 */
 function setState(state, prevSt = null) {
-    /*
-    if (state == prevState) { // take care of loop in state transfer
-        return;
-    }
-*/
     prevState = prevSt;
     if (state === statesQuiz.INTRO) {
         
@@ -75,23 +70,18 @@ function setState(state, prevSt = null) {
         // problem with state, should go back to intro ( reset quiz app !!!!)
         state = statesQuiz.INTRO;
         prevState = null;
-        // dont think this call is necessary
-       // setState(state, prevState);
     }
 
     actState = state;
     showbyState(state);
 }
 
-
 // score functionality
-let correctCounter = 0; // this is the number of question answered correctly on this run
+let correctCounter = 0; // this is the number of questions answered correctly on this run
 let scores = [];  // name , score
 
 // get and set top scores in localStorage
 function getTopScores(){
-    //const scores = [];
-    
     if (localStorage.topScores != undefined) {
         scores = JSON.parse(localStorage.getItem("topScores"));
         while (topList.firstChild) {
@@ -119,9 +109,6 @@ function sortTopScores(scores) {
         } else {
             return 0;
         }
-
-
-
     })
 }
 
@@ -160,7 +147,7 @@ function myClock() {
     
 }
 let myInterval = null;
-function setTimer(time = 10) { // default 120 seconds opr two(2) minutes
+function setTimer(time = 120) { // default 120 seconds opr two(2) minutes
     // from class notes and  https://www.w3schools.com/js/js_timing.asp
     timeLeft = time;
   MyInterval = setInterval(myClock, /* time **/ 1000) //  set time in seconds
@@ -176,23 +163,16 @@ function setupCallbackBns(Btn) {
             
             /* p[rocess the click event here*/
             if (this.id === "startBtn") {  // start quiz button
-                //alert("go to start quiz");
                 setState(statesQuiz.TEST, null);
                 setTimer(); // starts timer with default time for test 2 minutes
                 selectQuestion();
             } else if (this.id === "backBtn") { // back button , go back in page history see onclick="history.back()"
-                //alert("back button");
                 setState(prevState, null);
             } else if (this.id === "scoreslink") {  // top scores 
                 
                //alert("go to top scores");
                 setState(statesQuiz.TOPSCORE, actState);
             } else if (this.id === "clearScoreBtn") { // another button
-                
-               //alert("clear scores");
-                //setState(statesQuiz.TOPSCORE, actState);
-                //localStorage.removeItem("topScores");
-                
                 setTopScores(null); //null means delete local Storage variable
                 topScoreList.querySelectorAll("li").forEach(ilElem => {
                     ilElem.remove();
@@ -211,12 +191,11 @@ function setupCallbackBns(Btn) {
 
 setupCallbackBns(btns);
 
-
 // list of questions and answers,
 const questions = [
-    ["q1", "a11", "a12", "a13", "a14", 1],
-    ["q2", "a21", "a22", "a23", "a24", 1],
-    ["q3", "3", "3", "3", "3", 1],
+    ["Is JavaScript a case-sensitive language?", "yes", "no", "sometimes", "if setup properly", 1],
+    ["How you define a variable in JavaScript?", "intr", "variable", "let", "setVar", 3],
+    ["Name some of the JavaScript Frameworks", "J3", "Angular", "CSS", "HTML", 2],
     ["q4", "4", "4", "4", "4", 1],
     ["q5", "", "", "", "", 1],
     ["q6", "", "", "", "", 1],
@@ -275,13 +254,9 @@ function selectQuestion() {
             ans4StrArea.innerText = questions[QuestionIdx][4];
         }
     }
-
     return questionEntry; // -1 if no more questions. just in case i need it in the future, questionIdx will do for now.
 }
 
-/*
-
-*/
 function verifyAns(answer) {
     
     if (answer === questions[QuestionIdx][5]) {
@@ -289,19 +264,11 @@ function verifyAns(answer) {
         correctCounter++; // increase correctly answered counter
     } else {
         ansResult.innerText = "Wrong !!!"
-        //correct = false;
     }
-
-    // print answer result string
-    //ansResult.innerText = "Correct !!!"
-    // delay 2 seconds
-   // setTimeout(function(){ ansResult.innerText = "" }, 2000);
-    // clear answer result string
-   // ansResult.innerText = ""
 }
 
 /*
-
+ setup the callback to handle click on the answerrs
 */
 function setupCallbackAns(answersBtn) {
     answersBtn.forEach((ans) => {
@@ -309,17 +276,13 @@ function setupCallbackAns(answersBtn) {
             /* p[rocess the click event here*/
             let answer = null; // one based to make it easier to verify 
             if (this.id === "Ans1") {  // ans 1
-               
-                answer = 1;  // 
+                answer = 1;  
             } else if (this.id === "Ans2") { // ans 2
-                
-                answer = 2;  //
+                answer = 2;  
             } else if (this.id === "Ans3") {  // ans 3
-                
-                answer = 3;  //
+                answer = 3;  
             } else if (this.id === "Ans4") { // ans 4
-               
-                answer = 4;  //
+                answer = 4;  
             }
 
             verifyAns(answer);
