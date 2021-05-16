@@ -196,16 +196,16 @@ const questions = [
     ["Is JavaScript a case-sensitive language?", "yes", "no", "sometimes", "if setup properly", 1],
     ["How you define a variable in JavaScript?", "intr", "variable", "let", "setVar", 3],
     ["Name some of the JavaScript Frameworks", "J3", "Angular", "CSS", "HTML", 2],
-    ["q4", "4", "4", "4", "4", 1],
-    ["q5", "", "", "", "", 1],
-    ["q6", "", "", "", "", 1],
-    ["q7", "", "", "", "", 1],
-    ["q8", "", "", "", "", 1],
-    ["q9", "", "", "", "", 1],
-    ["q10", "", "", "", "", 1],
-    ["q11", "", "", "", "",1],
-    ["q12", "", "", "", "",1],
-    ["q13", "", "", "", "",1],
+    ["What is same as \"not a number\" in JavaScript?", "NULL", "nil", "NaN", "0", 3],
+    ["what function converts the string of any base to integer in JavaScript?", "string", "parseString", "to_Chr", "str", 2],
+    ["what if assigned will empty an Array in JavaScript?", "[\"\"]", "null", "\"\"", "[]", 4],
+    ["is a JavaScript data type:", "flt", "binArr", "Boolean", "unicode", 3],
+    ["Could you name some built-in methods in JavaScript?", "validateG", "pop", "myFunc", "NtoStr", 2],
+    [" Do all HTML tags have an end tag?", "yes", "depends on user", "no", "never", 3],
+    ["Select one HTML tag used to display the data in the tabular form?", "footer", "td", "heading", "datatable", 2],
+    ["Does a hyperlink only apply to text?", "yes,when underlined", "no, only to buttons", "no", "yes",3],
+    ["What is NOT a CSS selector?", "class", "parse", "element", "id",2],
+    ["what character is used to select ID's", "#", ".", "%", "^",1],
 ];
 
 // question string area
@@ -286,7 +286,7 @@ function setupCallbackAns(answersBtn) {
             }
 
             verifyAns(answer);
-           setTimeout( selectQuestion,1000); // select and present a new question
+           setTimeout( selectQuestion,800); // select and present a new question
         })
     })
 }
